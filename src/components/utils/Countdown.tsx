@@ -19,7 +19,7 @@ const Countdown = ({ title, prefix, from, to }: Props) => {
   }, [to, count])
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col" data-aos="fade-up" >
       <h3 className="font-poppins font-light text-4xl text-white">
         {prefix}
         <motion.span>{rounded}</motion.span>

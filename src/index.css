@@ -1,9 +1,53 @@
-@import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import 'tailwindcss';
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+}
 
 @theme {
-  --color-background-blue: #00192A; 
-  --color-dark-blue: #000F1A; 
-  --color-light-blue: #0062A3; 
-  --font-poppins: "Poppins", sans-serif; 
+  --color-background-blue: #00192a;
+  --color-dark-blue: #000f1a;
+  --color-light-blue: #0062a3;
+  --font-poppins: 'Poppins', sans-serif;
+
+  --animate-fade: fade-in 1.5s ease-out;
+
+  @keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: 'translateY(10px)';
+  }
+  100% {
+    opacity: 1;
+    transform: 'translateY(0)'
+  }
+}
+}
+
+.btn-pulse-gradient {
+  position: relative;
+  background-image: radial-gradient(ellipse at 50% 100%, #0062a3, #00192a 70%);
+}
+
+.btn-pulse-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(ellipse at 50% 100%, #0062a3, #00192a 35%);
+  opacity: 0;
+  border-radius: inherit;
+  animation: pulse-gradient-opacity 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse-gradient-opacity {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }

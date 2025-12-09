@@ -1,7 +1,7 @@
 import { scrollToSection } from '../../utils/scrollTo'
 import { useActiveSection } from '../../hook/useActiveSection'
 import { IoMdClose } from 'react-icons/io'
-import Curriculum from '/cv-fabian-bermudez.pdf'
+import Curriculum from '../../assets/cv-fabian-bermudez.pdf'
 import { useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 

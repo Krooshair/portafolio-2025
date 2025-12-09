@@ -2,12 +2,11 @@ type Props = {
   image: string
   title: string
   technologies: string[]
-  link: string
 }
 
-const CardProject = ({ image, title, technologies, link }: Props) => {
+const CardProject = ({ image, title, technologies }: Props) => {
   return (
-    <a href={link} target="_blank" className="w-full flex overflow-hidden font-poppins animate-fade">
+    <div className="w-full flex overflow-hidden font-poppins animate-fade">
       <div className="w-full h-[350px] flex flex-col justify-end p-3 gap-2 rounded-xl bg-linear-180 from-black/0 from-50% to-black overflow-hidden relative group">
         <img src={image} alt={title} title={title} loading="lazy" className="w-full h-full absolute top-0 left-0 object-top object-cover -z-10 group-hover:scale-105 transition-all duration-500" />
         <h2 className="uppercase text-white font-bold text-2xl">{title}</h2>
@@ -18,7 +17,7 @@ const CardProject = ({ image, title, technologies, link }: Props) => {
           ))}
         </div>
       </div>
-    </a>
+    </div>
   )
 }
 

@@ -73,8 +73,8 @@ const Experiences = () => {
   ]
 
   return (
-    <div className="w-full flex gap-6 p-6">
-      <div className="w-1/2 flex flex-col gap-4" data-aos="fade-up" >
+    <div className="w-full flex flex-col lg:flex-row gap-6 lg:p-6">
+      <div className="w-full lg:w-1/2 flex flex-col gap-4" data-aos="fade-up" >
         {experiences.map(exp => (
           <div className="w-full flex flex-col gap-4" key={exp.id}>
             <div
@@ -92,7 +92,7 @@ const Experiences = () => {
             </div>
             <ul
               className={`list-disc flex flex-col gap-1 text-[#AAAAAA] font-light font-poppins ml-4 ${
-                viewExperiences == exp.id ? 'h-80 transition-all duration-500' : 'h-0 transition-all duration-800'
+                viewExperiences == exp.id ? 'h-fit lg:h-80 transition-all duration-500' : 'h-0 transition-all duration-800'
               } overflow-hidden`}
             >
               {exp.list.map((itm, i) => (
@@ -102,7 +102,7 @@ const Experiences = () => {
           </div>
         ))}
       </div>
-      <div className="w-1/2 flex flex-col" data-aos="fade-up" >
+      <div className="w-full lg:w-1/2 flex flex-col" data-aos="fade-up" >
         {experiences.map(exp => (
           <div className={`${viewExperiences == exp.id ? 'flex flex-col animate-fade' : 'hidden'}`} >
             <div className={`w-full flex justify-center items-center relative overflow-hidden `}>
